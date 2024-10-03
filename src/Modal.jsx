@@ -1,11 +1,18 @@
 import React from "react";
 import product from "./assets/flower.webp";
 
-const Modal = () => {
-  const modalStyles = ['static', 'hidden']
-  console.log(modalStyles.remove)
+const Modal = ({ title, description, image, price, open }) => {
+  var modalStyles = ["static", "hidden"];
+  const showModal = (show) => {
+    if (show) {
+      modalStyles = modalStyles.filter((style) => style != "hidden");
+    } else {
+      modalStyles.push("hidden");
+    }
+    return modalStyles;
+  };
   return (
-    <div className="static hidden ">
+    <div className={showModal(open).join(" ")}>
       {/* Overlay */}
       <div className="fixed m-0 p-0 h-screen w-screen bg-[#5b4b63] z-10 top-0 opacity-60"></div>
       <div className="fixed top-0 right-0 bottom-0 left-0 z-20 flex items-center justify-center">
@@ -19,16 +26,14 @@ const Modal = () => {
             <div className="md:ml-6 w-full md:w-3/4">
               {/* Product Name and Price */}
               <div className="flex justify-between items-center">
-                <div className="font-bold text-2xl">Flowers</div>
+                <div className="font-bold text-2xl">{title}</div>
                 <div className="font-bold font-mono text-2xl text-red-700">
-                  $35
+                  {price}
                 </div>
               </div>
 
               {/* Product Description */}
-              <p className="text-gray-600 mt-2">
-                A beautiful bouquet of fresh flowers perfect for any occasion.
-              </p>
+              <p className="text-gray-600 mt-2">{description}</p>
 
               {/* Quantity and Add to Cart */}
               <div className="mt-4">
