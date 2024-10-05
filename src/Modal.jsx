@@ -1,18 +1,70 @@
-import React from "react";
-import product from "./assets/flower.webp";
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { addItemToCart } from "./cartRedux";
+import { addItemToWishlist } from "./wishlistRedux";
 
-const Modal = ({ title, description, image, price, open }) => {
-  var modalStyles = ["static", "hidden"];
-  const showModal = (show) => {
-    if (show) {
-      modalStyles = modalStyles.filter((style) => style != "hidden");
-    } else {
-      modalStyles.push("hidden");
-    }
-    return modalStyles;
+const Modal = ({ title, description, image, price, open, onClose }) => {
+  const [itemsCount, setItemsCount] = useState(1);
+  // Redux implementation
+  const cart = useSelector((state) => state.cart);
+  const wishlist = useSelector((state) => state.wishlist);
+  const dispatch = useDispatch();
+  const removeItemsFromCart = () => {
+    setItemsCount((prev) => {
+      if (prev > 1) {
+        return prev - 1;
+      } else {
+        return 1;
+      }
+    });
   };
+  const addItemsToCart = () => {
+    setItemsCount((prev) => prev + 1);
+  };
+
+  // Disable scrolling when the modal is open
+  useEffect(() => {
+    if (open) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [open]);
+
+  // Close the modal if clicking outside the modal content
+  const handleOverlayClick = (e) => {
+    if (e.target.id === "modal-overlay") {
+      onClose();
+    }
+  };
+  const addToCart = () => {
+    const cartData = {
+      title: title,
+      description: description,
+      image: image,
+      price: price,
+      itemCount: itemsCount,
+    };
+    dispatch(addItemToCart(cartData));
+  };
+  const addToWishlist = () => {
+    const cartData = {
+      title: title,
+      description: description,
+      image: image,
+      price: price,
+    };
+    dispatch(addItemToWishlist(cartData));
+  };
+
+  console.log(cart, "data in cart");
+  console.log(wishlist, "data in wishlist");
   return (
-    <div className={showModal(open).join(" ")}>
+    <>
       {/* Overlay */}
       <div
         id="modal-overlay"
@@ -41,8 +93,9 @@ const Modal = ({ title, description, image, price, open }) => {
             className="w-full md:w-1/3 h-auto rounded-lg object-cover"
           />
 
-            {/* Product Details */}
-            <div className="md:ml-6 w-full md:w-3/4">
+          {/* Product Details */}
+          <div className="md:ml-6 w-full md:w-2/3 mt-4 md:mt-0">
+            <div className="flex justify-between items-center mb-4">
               {/* Product Name and Price */}
               <h2 className="text-3xl font-bold text-gray-800">{title}</h2>
               <span className="text-2xl font-semibold text-pink-600">
@@ -55,29 +108,42 @@ const Modal = ({ title, description, image, price, open }) => {
               {description}
             </p>
 
-              {/* Quantity and Add to Cart */}
-              <div className="mt-4">
-                <div className="flex justify-start items-center space-x-4 mb-4">
-                  <button className="border-2 px-2">-</button>
-                  <div className="font-bold font-mono text-xl text-red-700">
-                    Quantity: 1
-                  </div>
-                  <button className="border-2 px-2">+</button>
-                </div>
-                <div className="flex">
-                  <button className="w-full md:w-auto border-2 px-4 py-2 rounded bg-green-500 text-white font-bold font-mono text-lg">
-                    Move to Wishlist
-                  </button>
-                  <button className="w-full md:w-auto border-2 px-4 py-2 rounded bg-green-500 text-white font-bold font-mono text-lg">
-                    Add to Cart
-                  </button>
-                </div>
+            {/* Quantity and Add to Cart Buttons */}
+            <div className="mt-6">
+              <div className="flex items-center space-x-4 mb-6">
+                <button
+                  onClick={removeItemsFromCart}
+                  className="border-2 px-3 py-1 rounded-lg text-lg"
+                >
+                  -
+                </button>
+                <span className="font-bold text-xl">{itemsCount}</span>
+                <button
+                  onClick={addItemsToCart}
+                  className="border-2 px-3 py-1 rounded-lg text-lg"
+                >
+                  +
+                </button>
+              </div>
+              <div className="flex flex-col md:flex-row space-y-3 md:space-y-0 md:space-x-4">
+                <button
+                  onClick={addToCart}
+                  className="w-full md:w-auto px-6 py-2 bg-pink-500 text-white rounded-lg shadow-md hover:bg-pink-600 transition-colors duration-300"
+                >
+                  Add to Cart
+                </button>
+                <button
+                  onClick={addToWishlist}
+                  className="w-full md:w-auto px-6 py-2 bg-gray-300 text-gray-700 rounded-lg shadow-md hover:bg-gray-400 transition-colors duration-300"
+                >
+                  Move to Wishlist
+                </button>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
