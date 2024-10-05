@@ -1,27 +1,55 @@
 
-import React from 'react';
-import home from './assets/home.png';
-import basket from './assets/basket.png';
-import heart from './assets/heart.png';
-import logo from './assets/logo.png';
-import { useNavigate } from 'react-router-dom';
+import React from "react";
+import home from "./assets/home.png";
+import basket from "./assets/basket.png";
+import heart from "./assets/heart.png";
+import logo from "./assets/logo.png";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const navigate = useNavigate();
   return (
-    <nav className="navbar flex justify-between items-center bg-[#C8A1E0]">
-      <div className="flex items-center cursor-pointer ">
-          <img src={logo} alt="logo" className="w-52" />
+    <nav className="navbar flex justify-between items-center bg-[#F3F4F6] shadow-md p-4">
+      {/* Logo Section */}
+      <div className="flex items-center ">
+        <img
+          src={logo}
+          alt="logo"
+          className="w-48"
+        />
       </div>
-      <div className="flex items-center cursor-pointer">
-        <div className="mr-4" onClick={() => navigate('/Home')} >
-            <img src={home} alt="home" className="home w-12 h-12" />
+
+      {/* Navigation Icons */}
+      <div className="flex items-center space-x-6 cursor-pointer ">
+        {/* Home Icon */}
+        <div
+          onClick={() => navigate("/Home")}
+          className="relative group hover:scale-105 transition-transform duration-200"
+        >
+          <img src={home} alt="home" className="w-10 h-10" />
+          <span className="absolute left-1/2 transform -translate-x-1/2 top-12 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+            Home
+          </span>
         </div>
-        <div className="mr-4" onClick={() => navigate('/Wishlist')}>
-            <img src={heart} alt="heart" className="heart w-12 h-12" />
+        {/* Wishlist Icon */}
+        <div
+          onClick={() => navigate("/Wishlist")}
+          className="relative group hover:scale-105 transition-transform duration-200"
+        >
+          <img src={heart} alt="wishlist" className="w-10 h-10" />
+          <span className="absolute left-1/2 transform -translate-x-1/2 top-12 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+            Wishlist
+          </span>
         </div>
-        <div className="mr-4 " onClick={() => navigate('/Cart')}>
-            <img src={basket} alt="basket" className="basket w-12 h-12" />     
+        {/* Cart Icon */}
+        <div
+          onClick={() => navigate("/Cart")}
+          className="relative group hover:scale-105 transition-transform duration-200"
+        >
+          <img src={basket} alt="cart" className="w-10 h-10" />
+          <span className="absolute left-1/2 transform -translate-x-1/2 top-12 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+            Cart
+          </span>
         </div>
       </div>
     </nav>
@@ -29,4 +57,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-

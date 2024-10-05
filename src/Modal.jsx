@@ -14,26 +14,46 @@ const Modal = ({ title, description, image, price, open }) => {
   return (
     <div className={showModal(open).join(" ")}>
       {/* Overlay */}
-      <div className="fixed m-0 p-0 h-screen w-screen bg-[#5b4b63] z-10 top-0 opacity-60"></div>
-      <div className="fixed top-0 right-0 bottom-0 left-0 z-20 flex items-center justify-center">
-        <div className="mx-auto bg-white flex items-center justify-center w-11/12 md:w-4/5 h-auto flex-col p-12 rounded-lg shadow-lg">
-          {/* Product Container */}
-          <div className="bg-white flex flex-col md:flex-row items-start p-4 rounded-lg">
-            {/* Product Image */}
-            <img src={product} className="w-full md:w-1/4 h-auto rounded-lg" />
+      <div
+        id="modal-overlay"
+        className={`fixed inset-0 bg-black bg-opacity-60 z-40 transition-opacity duration-300 ease-in-out ${
+          open ? "opacity-100" : "opacity-0 pointer-events-none"
+        }`}
+        onClick={handleOverlayClick} // Close modal on clicking outside the content
+      ></div>
+
+      {/* Modal Content */}
+      <div
+        className={`fixed inset-0 z-50 flex items-center justify-center transition-transform duration-300 ease-in-out ${
+          open
+            ? "opacity-100 scale-100"
+            : "opacity-0 scale-90 pointer-events-none"
+        }`}
+      >
+        <div
+          className="bg-white flex flex-col md:flex-row items-start p-6 md:p-12 w-11/12 md:w-4/5 max-w-4xl h-auto rounded-lg shadow-lg transform transition-transform duration-300 ease-in-out"
+          onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside the modal
+        >
+          {/* Product Image */}
+          <img
+            src={image}
+            alt={title}
+            className="w-full md:w-1/3 h-auto rounded-lg object-cover"
+          />
 
             {/* Product Details */}
             <div className="md:ml-6 w-full md:w-3/4">
               {/* Product Name and Price */}
-              <div className="flex justify-between items-center">
-                <div className="font-bold text-2xl">{title}</div>
-                <div className="font-bold font-mono text-2xl text-red-700">
-                  {price}
-                </div>
-              </div>
+              <h2 className="text-3xl font-bold text-gray-800">{title}</h2>
+              <span className="text-2xl font-semibold text-pink-600">
+                {price}
+              </span>
+            </div>
 
-              {/* Product Description */}
-              <p className="text-gray-600 mt-2">{description}</p>
+            {/* Product Description */}
+            <p className="text-gray-600 text-lg leading-relaxed">
+              {description}
+            </p>
 
               {/* Quantity and Add to Cart */}
               <div className="mt-4">

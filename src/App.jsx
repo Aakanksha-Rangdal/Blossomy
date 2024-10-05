@@ -5,7 +5,7 @@ import Modal from "./Modal";
 import data from "../resources/inventory.json";
 import Wishlist from "./Wishlist";
 import Cart from "./Cart";
-// import Cart from "./Home";
+import Home from "./Home";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
@@ -17,26 +17,10 @@ function App() {
       <div>
         <Navbar />
         <Routes>
+          <Route path="/" element={<Home />} />
           <Route path="/Wishlist" element={<Wishlist />} />
           <Route path="/Cart" element={<Cart />} />
-          {/* <Route path="/Home" element={<Home />} /> */}
-          <Route
-            path="/"
-            element={
-              <div className="grid grid-cols-4">
-                {data.map((item) => {
-                  return (
-                    <Box
-                      image={item.image}
-                      title={item.title}
-                      description={item.description}
-                      price={item.price}
-                    />
-                  );
-                })}
-              </div>
-            }
-          />
+          <Route path="/Home" element={<Home />} />
         </Routes>
       </div>
     </Router>
