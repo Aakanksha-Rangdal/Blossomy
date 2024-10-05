@@ -1,9 +1,8 @@
-
 import React from "react";
-import home from "./assets/home.png";
-import basket from "./assets/basket.png";
-import heart from "./assets/heart.png";
-import logo from "./assets/logo.png";
+import home from "/src/assets/home.png";
+import basket from "/src/assets/basket.png";
+import heart from "/src/assets/heart.png";
+import logo from "/src/assets/logo.png";
 import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
@@ -11,12 +10,11 @@ const Navbar = () => {
   return (
     <nav className="navbar flex justify-between items-center bg-[#F3F4F6] shadow-md p-4">
       {/* Logo Section */}
-      <div className="flex items-center ">
-        <img
-          src={logo}
-          alt="logo"
-          className="w-48"
-        />
+      <div
+        onClick={() => navigate("/Home")}
+        className="flex cursor-pointer items-center "
+      >
+        <img src={logo} alt="logo" className="w-48" />
       </div>
 
       {/* Navigation Icons */}

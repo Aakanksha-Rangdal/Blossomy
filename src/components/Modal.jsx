@@ -1,26 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addItemToCart } from "./cartRedux";
-import { addItemToWishlist } from "./wishlistRedux";
+import { addItemToCart } from "../cartRedux";
+import { addItemToWishlist, removeItemFromWishlist } from "../wishlistRedux";
 
 const Modal = ({ title, description, image, price, open, onClose }) => {
-  const [itemsCount, setItemsCount] = useState(1);
+  const [inCart, setInCart] = useState(false);
+  const [inWishlist, setInWishlist] = useState(false);
   // Redux implementation
   const cart = useSelector((state) => state.cart);
   const wishlist = useSelector((state) => state.wishlist);
   const dispatch = useDispatch();
-  const removeItemsFromCart = () => {
-    setItemsCount((prev) => {
-      if (prev > 1) {
-        return prev - 1;
-      } else {
-        return 1;
-      }
-    });
-  };
-  const addItemsToCart = () => {
-    setItemsCount((prev) => prev + 1);
-  };
 
   // Disable scrolling when the modal is open
   useEffect(() => {
@@ -42,16 +31,22 @@ const Modal = ({ title, description, image, price, open, onClose }) => {
     }
   };
   const addToCart = () => {
+    if (inCart) {
+      return;
+    }
     const cartData = {
       title: title,
       description: description,
       image: image,
       price: price,
-      itemCount: itemsCount,
     };
     dispatch(addItemToCart(cartData));
   };
   const addToWishlist = () => {
+    if (inWishlist) {
+      dispatch(removeItemFromWishlist(title));
+      return;
+    }
     const cartData = {
       title: title,
       description: description,
@@ -60,7 +55,24 @@ const Modal = ({ title, description, image, price, open, onClose }) => {
     };
     dispatch(addItemToWishlist(cartData));
   };
-
+  useEffect(() => {
+    if (
+      cart.data.some((item) => item.title.toLowerCase() == title.toLowerCase())
+    ) {
+      setInCart((prev) => true);
+    }
+  });
+  useEffect(() => {
+    if (
+      wishlist.data.some(
+        (item) => item.title.toLowerCase() == title.toLowerCase()
+      )
+    ) {
+      setInWishlist((prev) => true);
+    } else {
+      setInWishlist(false);
+    }
+  });
   console.log(cart, "data in cart");
   console.log(wishlist, "data in wishlist");
   return (
@@ -76,7 +88,7 @@ const Modal = ({ title, description, image, price, open, onClose }) => {
 
       {/* Modal Content */}
       <div
-        className={`fixed inset-0 z-50 flex items-center justify-center transition-transform duration-300 ease-in-out ${
+        className={`fixed cursor-default inset-0 z-50 flex items-center justify-center transition-transform duration-300 ease-in-out ${
           open
             ? "opacity-100 scale-100"
             : "opacity-0 scale-90 pointer-events-none"
@@ -110,34 +122,23 @@ const Modal = ({ title, description, image, price, open, onClose }) => {
 
             {/* Quantity and Add to Cart Buttons */}
             <div className="mt-6">
-              <div className="flex items-center space-x-4 mb-6">
-                <button
-                  onClick={removeItemsFromCart}
-                  className="border-2 px-3 py-1 rounded-lg text-lg"
-                >
-                  -
-                </button>
-                <span className="font-bold text-xl">{itemsCount}</span>
-                <button
-                  onClick={addItemsToCart}
-                  className="border-2 px-3 py-1 rounded-lg text-lg"
-                >
-                  +
-                </button>
-              </div>
               <div className="flex flex-col md:flex-row space-y-3 md:space-y-0 md:space-x-4">
-                <button
+                <div
                   onClick={addToCart}
-                  className="w-full md:w-auto px-6 py-2 bg-pink-500 text-white rounded-lg shadow-md hover:bg-pink-600 transition-colors duration-300"
+                  className={
+                    inCart
+                      ? "w-full md:w-auto px-6 py-2 cursor-default bg-green-500 text-white rounded-lg shadow-md transition-colors duration-300"
+                      : "w-full md:w-auto px-6 py-2 cursor-pointer bg-pink-500 text-white rounded-lg shadow-md hover:bg-pink-600 transition-colors duration-300"
+                  }
                 >
-                  Add to Cart
-                </button>
-                <button
+                  {inCart ? "Added to Cart" : "Add to Cart"}
+                </div>
+                <div
                   onClick={addToWishlist}
                   className="w-full md:w-auto px-6 py-2 bg-gray-300 text-gray-700 rounded-lg shadow-md hover:bg-gray-400 transition-colors duration-300"
                 >
-                  Move to Wishlist
-                </button>
+                  {inWishlist ? "Remove from Wishlist" : "Move to Wishlist"}
+                </div>
               </div>
             </div>
           </div>

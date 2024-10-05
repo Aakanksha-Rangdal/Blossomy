@@ -19,8 +19,9 @@ export const wishlistSlice = createSlice({
       }
     },
     removeItemFromWishlist: (state, data) => {
+      console.log(data);
       const filtered_data = state.data.filter(
-        (item) => lower(item.title) != lower(data.title)
+        (item) => item.title.toLowerCase() != data.payload.toLowerCase()
       );
       state.data = filtered_data;
     },

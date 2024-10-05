@@ -1,11 +1,11 @@
 import React, { useState } from "react"; // Import React and useState
-import Navbar from "./Navbar";
-import Box from "./Box";
-import Modal from "./Modal";
+import Navbar from "./components/Navbar";
+import Box from "./components/Box";
+import Modal from "./components/Modal";
 import data from "../resources/inventory.json";
-import Wishlist from "./Wishlist";
-import Cart from "./Cart";
-import Home from "./Home";
+import Wishlist from "./components/Wishlist";
+import Cart from "./components/Cart";
+import Home from "./components/Home";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
