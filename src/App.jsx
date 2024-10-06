@@ -1,27 +1,28 @@
 import React, { useState } from "react"; // Import React and useState
-import Navbar from "./Navbar";
-import Box from "./Box";
-import Modal from "./Modal";
+import Navbar from "./components/Navbar";
+import Box from "./components/Box";
+import Modal from "./components/Modal";
 import data from "../resources/inventory.json";
-// import useToggle from "./hooks/useToggle";
+import Wishlist from "./components/Wishlist";
+import Cart from "./components/Cart";
+import Home from "./components/Home";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
   const [count, setCount] = useState(0);
-  // const { on, toggler } = useToggle();
-  console.log(data, "data");
 
   return (
-    <div>
-      <Navbar />
-      <div className="grid grid-cols-4">
-        {data.map((item) => {
-          return <Box image={item.image} title={item.title} description={item.description} price={item.price} />;
-        })}
-        {/* <Box /> */}
+    <Router>
+      <div>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/Wishlist" element={<Wishlist />} />
+          <Route path="/Cart" element={<Cart />} />
+          <Route path="/Home" element={<Home />} />
+        </Routes>
       </div>
-      {/* {on && <Modal toggler={toggler} />} */}
-      {/* <Modal /> */}
-    </div>
+    </Router>
   );
 }
 
