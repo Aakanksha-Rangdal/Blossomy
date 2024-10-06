@@ -4,7 +4,7 @@ import { removeItemFromCart, updateCartItem } from "../cartRedux";
 import { addItemToWishlist } from "../wishlistRedux";
 
 const CartItem = ({ title, description, image, price, quantity }) => {
-  const [itemsCount, setItemsCount] = useState(1);
+  const [itemsCount, setItemsCount] = useState(quantity);
   const cart = useSelector((state) => state.cart);
   const dispatch = useDispatch();
 
