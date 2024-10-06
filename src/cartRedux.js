@@ -1,17 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
-import cartData from "/data/cart.json";
 
 const initialState = {
-  data: [
-    {
-      title: "lilies in bloom",
-      description:
-        "Elegant lilies in full bloom, offering a delightful fragrance and graceful beauty. A perfect centerpiece for your home or event.",
-      image: "/src/assets/3.jpg",
-      price: "$12.49",
-      itemCount: 1,
-    },
-  ],
+  data: [],
 };
 
 export const cartSlice = createSlice({
@@ -29,8 +19,28 @@ export const cartSlice = createSlice({
         state.data = [...state.data, action.payload];
       }
     },
+    updateCartItem: (state, data) => {
+      if (data.payload.action == "add") {
+        const updatedItems = state.data.map((item) => {
+          if (item.title.toLowerCase() == data.payload.title) {
+            item.quantity += 1;
+            return item;
+          }
+          return item;
+        });
+        state.data = updatedItems;
+      } else {
+        const updatedItems = state.data.map((item) => {
+          if (item.title.toLowerCase() == data.payload.title) {
+            item.quantity = item.quantity > 1 ? item.quantity - 1 : 1;
+            return item;
+          }
+          return item;
+        });
+        state.data = updatedItems;
+      }
+    },
     removeItemFromCart: (state, data) => {
-      console.log(data);
       const filtered_data = state.data.filter(
         (item) => item.title.toLowerCase() != data.payload.toLowerCase()
       );
@@ -39,5 +49,6 @@ export const cartSlice = createSlice({
   },
 });
 
-export const { addItemToCart, removeItemFromCart } = cartSlice.actions;
+export const { addItemToCart, removeItemFromCart, updateCartItem } =
+  cartSlice.actions;
 export default cartSlice.reducer;

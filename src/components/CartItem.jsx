@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { removeItemFromCart } from "../cartRedux";
+import { removeItemFromCart, updateCartItem } from "../cartRedux";
 import { addItemToWishlist } from "../wishlistRedux";
 
-const CartItem = ({ title, description, image, price }) => {
+const CartItem = ({ title, description, image, price, quantity }) => {
   const [itemsCount, setItemsCount] = useState(1);
   const cart = useSelector((state) => state.cart);
   const dispatch = useDispatch();
@@ -16,6 +16,7 @@ const CartItem = ({ title, description, image, price }) => {
   };
   const addItemsToCart = () => {
     setItemsCount((prev) => prev + 1);
+    dispatch(updateCartItem({ action: "add", title: title }));
   };
   const removeItemsFromCart = () => {
     setItemsCount((prev) => {
@@ -25,6 +26,7 @@ const CartItem = ({ title, description, image, price }) => {
         return 1;
       }
     });
+    dispatch(updateCartItem({ action: "remove", title: title }));
   };
   const removeFromCart = () => {
     dispatch(removeItemFromCart(title));

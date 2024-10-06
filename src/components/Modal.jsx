@@ -39,6 +39,7 @@ const Modal = ({ title, description, image, price, open, onClose }) => {
       description: description,
       image: image,
       price: price,
+      quantity:1
     };
     dispatch(addItemToCart(cartData));
   };
@@ -73,8 +74,6 @@ const Modal = ({ title, description, image, price, open, onClose }) => {
       setInWishlist(false);
     }
   });
-  console.log(cart, "data in cart");
-  console.log(wishlist, "data in wishlist");
   return (
     <>
       {/* Overlay */}
