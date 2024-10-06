@@ -1,4 +1,4 @@
-# Blossomy🌸
+# Blossomy🌻
 
 ## Steps to run the application
 
@@ -7,7 +7,7 @@
 - Move to the project `cd assignment2-Aakanksha-Rangdal`
 - Install dependencies `npm i`
 - Run project on local `npm start`
-- 🎉 Welcome to _Blossomy🌸_
+- 🎉 Welcome to **Blossomy🌻**
 
 ## Built with 🛠️
 
@@ -15,6 +15,7 @@
 - Tailwind CSS
 - React Redux
 - React Router
+- Redux persist
 
 # Developer best practices
 
