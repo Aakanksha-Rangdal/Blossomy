@@ -134,7 +134,7 @@ const Modal = ({ title, description, image, price, open, onClose }) => {
                 </div>
                 <div
                   onClick={addToWishlist}
-                  className="w-full md:w-auto px-6 py-2 bg-gray-300 text-gray-700 rounded-lg shadow-md hover:bg-gray-400 transition-colors duration-300"
+                  className="w-full md:w-auto px-6 py-2 bg-orange-300 text-gray-700 cursor-pointer rounded-lg shadow-md hover:bg-orange-400 transition-colors duration-300"
                 >
                   {inWishlist ? "Remove from Wishlist" : "Move to Wishlist"}
                 </div>

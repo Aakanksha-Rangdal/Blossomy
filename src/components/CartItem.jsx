@@ -47,7 +47,7 @@ const CartItem = ({ title, description, image, price, quantity }) => {
           <p className="text-xl">{description} </p>
         </div>
         <div className="flex justify-between">
-          <p className="text-gray-700 text-lg">{price}</p>
+          <p className="text-gray-700 text-lg">${price}</p>
           <div className="flex items-center space-x-4 mb-6">
             <button
               onClick={removeItemsFromCart}

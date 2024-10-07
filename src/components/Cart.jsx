@@ -34,8 +34,9 @@ const Cart = () => {
       </div>
       <div className="my-10 flex justify-end">
         <div className="flex flex-col gap-2">
-          <div className="text-3xl font-semibold text-gray-700">
-            Total: ${cartTotalPrice}
+          <div className="text-3xl text-gray-700">
+            <span className="font-semibold">Total:</span>{" "}
+            <span className="font-mono">${cartTotalPrice}</span>
           </div>
           <div
             onClick={() => {
