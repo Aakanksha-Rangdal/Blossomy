@@ -17,7 +17,7 @@
 - React Router
 - Redux persist
 
-# Developer best practices
+# Developer best practices👩‍💻
 
 - Used Prettier✨ to format code, leading to better readability
 - Used Vite to create, run and build the application.

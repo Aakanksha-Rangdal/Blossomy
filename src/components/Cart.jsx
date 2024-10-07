@@ -18,7 +18,7 @@ const Cart = () => {
       <h1 className="text-4xl font-bold text-center text-gray-700 mb-10">
         Shopping Cart
       </h1>
-      <div className="">
+      <div className="flex flex-col gap-4">
         {cart.data.map((item, index) => {
           return (
             <CartItem
@@ -32,10 +32,21 @@ const Cart = () => {
           );
         })}
       </div>
-      <div className="mt-10 text-right">
-        <h2 className="text-3xl font-semibold text-gray-700">
-          Total: ${cartTotalPrice}
-        </h2>
+      <div className="my-10 flex justify-end">
+        <div className="flex flex-col gap-2">
+          <div className="text-3xl text-gray-700">
+            <span className="font-semibold">Total:</span>{" "}
+            <span className="font-mono">${cartTotalPrice}</span>
+          </div>
+          <div
+            onClick={() => {
+              alert("Checkout Coming Soon...");
+            }}
+            className="flex items-center max-w-40 text-xl cursor-pointer text-white rounded-xl justify-center p-5 bg-blue-500 hover:bg-blue-600"
+          >
+            <p>Checkout</p>
+          </div>
+        </div>
       </div>
     </div>
   );

@@ -36,7 +36,7 @@ const Home = () => {
   };
   useEffect(() => {
     const filteredItems = data.filter((item) => {
-      if (item.title.includes(searchTerm)) {
+      if (item.title.toLowerCase().includes(searchTerm.toLowerCase())) {
         return item;
       }
     });
@@ -47,7 +47,7 @@ const Home = () => {
   }, [data]);
   console.log(inventoryData);
   return (
-    <div className="bg-[#ffffff] min-h-screen px-8 py-10 opacity-80">
+    <div className="bg-[#fff] min-h-screen px-8 py-10 opacity-80">
       <h1 className="text-4xl font-bold text-center text-gray-700 mb-10">
         Our Products
       </h1>

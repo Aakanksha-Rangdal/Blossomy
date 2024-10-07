@@ -47,7 +47,7 @@ const CartItem = ({ title, description, image, price, quantity }) => {
           <p className="text-xl">{description} </p>
         </div>
         <div className="flex justify-between">
-          <p className="text-gray-700 text-lg">{price}</p>
+          <p className="text-gray-700 text-lg">${price}</p>
           <div className="flex items-center space-x-4 mb-6">
             <button
               onClick={removeItemsFromCart}
@@ -66,7 +66,7 @@ const CartItem = ({ title, description, image, price, quantity }) => {
           <div
             onClick={moveToWishlist}
             className={
-              "px-6 py-2 cursor-pointer bg-orange-500 text-white rounded-lg shadow-md hover:bg-pink-600 transition-colors duration-300"
+              "px-6 py-2 flex justify-center items-center cursor-pointer bg-orange-500 text-white rounded-lg shadow-md hover:bg-pink-600 transition-colors duration-300"
             }
           >
             Move to Wishlist
@@ -74,7 +74,7 @@ const CartItem = ({ title, description, image, price, quantity }) => {
           <div
             onClick={removeFromCart}
             className={
-              "px-6 py-2 cursor-pointer bg-pink-500 text-white rounded-lg shadow-md hover:bg-pink-600 transition-colors duration-300"
+              "px-6 py-2 flex justify-center items-center cursor-pointer bg-pink-500 text-white rounded-lg shadow-md hover:bg-pink-600 transition-colors duration-300"
             }
           >
             Remove from Cart

@@ -17,9 +17,9 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/Wishlist" element={<Wishlist />} />
-          <Route path="/Cart" element={<Cart />} />
-          <Route path="/Home" element={<Home />} />
+          <Route path="/wishlist" element={<Wishlist />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/home" element={<Home />} />
         </Routes>
       </div>
     </Router>

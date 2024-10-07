@@ -94,7 +94,7 @@ const Modal = ({ title, description, image, price, open, onClose }) => {
         }`}
       >
         <div
-          className="bg-white flex flex-col md:flex-row items-start p-6 md:p-12 w-11/12 md:w-4/5 max-w-4xl h-auto rounded-lg shadow-lg transform transition-transform duration-300 ease-in-out"
+          className="bg-[#f5e0f6] flex flex-col md:flex-row items-start p-6 md:p-12 w-11/12 md:w-4/5 max-w-4xl h-auto rounded-lg shadow-lg transform transition-transform duration-300 ease-in-out"
           onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside the modal
         >
           {/* Product Image */}
@@ -110,7 +110,7 @@ const Modal = ({ title, description, image, price, open, onClose }) => {
               {/* Product Name and Price */}
               <h2 className="text-3xl font-bold text-gray-800">{title}</h2>
               <span className="text-2xl font-semibold text-pink-600">
-                {price}
+                ${price}
               </span>
             </div>
 
@@ -134,7 +134,7 @@ const Modal = ({ title, description, image, price, open, onClose }) => {
                 </div>
                 <div
                   onClick={addToWishlist}
-                  className="w-full md:w-auto px-6 py-2 bg-gray-300 text-gray-700 rounded-lg shadow-md hover:bg-gray-400 transition-colors duration-300"
+                  className="w-full md:w-auto px-6 py-2 bg-orange-300 text-gray-700 cursor-pointer rounded-lg shadow-md hover:bg-orange-400 transition-colors duration-300"
                 >
                   {inWishlist ? "Remove from Wishlist" : "Move to Wishlist"}
                 </div>

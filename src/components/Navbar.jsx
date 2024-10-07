@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom";
 const Navbar = () => {
   const navigate = useNavigate();
   return (
-    <nav className="navbar flex justify-between items-center bg-[#F3F4F6] shadow-md p-4">
+    <nav className="navbar flex justify-between items-center bg-[#f5e0f6] p-4 shadow-2xl">
       {/* Logo Section */}
       <div
         onClick={() => navigate("/Home")}
