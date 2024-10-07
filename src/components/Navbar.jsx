@@ -1,8 +1,8 @@
 import React from "react";
-import home from "/src/assets/home.png";
-import basket from "/src/assets/basket.png";
-import heart from "/src/assets/heart.png";
-import logo from "/src/assets/logo.png";
+import home from "/assets/home.png";
+import basket from "/assets/basket.png";
+import heart from "/assets/heart.png";
+import logo from "/assets/logo.png";
 import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {

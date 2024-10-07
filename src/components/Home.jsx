@@ -26,7 +26,7 @@
 import React, { useEffect, useState } from "react";
 import Box from "./Box";
 import data from "/resources/inventory.json";
-import searchIcon from "/src/assets/search.svg";
+import searchIcon from "/assets/search.svg";
 
 const Home = () => {
   const [searchTerm, setSearchTerm] = useState("");
