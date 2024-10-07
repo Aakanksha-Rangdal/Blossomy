@@ -1,121 +1,121 @@
 [
   {
-    "title": "roses bouquet",
-    "description": "A stunning bouquet of red roses, perfect for special occasions. Freshly picked and elegantly arranged for a heartfelt gesture.",
+    "title": "Roses Bouquet",
+    "description": "A stunning bouquet of 12 freshly picked long-stemmed red roses, perfect for special occasions. Each rose is carefully selected for its vibrant color and velvety petals. Elegantly wrapped in kraft paper and tied with a satin ribbon for a heartfelt gesture.",
     "image": "/src/assets/1.jpg",
     "price": 19.99
   },
   {
-    "title": "tulip arrangement",
-    "description": "Bright and colorful tulips, arranged in a beautiful vase. A lovely addition to brighten up any room with vibrant spring vibes.",
+    "title": "Tulip Arrangement",
+    "description": "A bright and colorful arrangement of 10 mixed tulips in shades of pink, yellow, red, and orange, arranged in a stylish glass vase. These cheerful tulips are perfect for adding a touch of spring to any room.",
     "image": "/src/assets/2.jpg",
     "price": 14.99
   },
   {
-    "title": "lilies in bloom",
-    "description": "Elegant lilies in full bloom, offering a delightful fragrance and graceful beauty. A perfect centerpiece for your home or event.",
+    "title": "Lilies in Bloom",
+    "description": "A graceful arrangement of 5 elegant white lilies in full bloom, offering a delightful fragrance and a stunning visual appeal. Presented in a clear vase, making it a perfect centerpiece for any home or event.",
     "image": "/src/assets/3.jpg",
     "price": 12.49
   },
   {
-    "title": "orchid elegance",
-    "description": "Exquisite orchid stems, a symbol of luxury and sophistication. Ideal for gifting or adding a touch of elegance to any space.",
+    "title": "Orchid Elegance",
+    "description": "An exquisite arrangement of 3 orchid stems, available in white or purple, symbolizing luxury and sophistication. This stunning bouquet is ideal for gifting or adding a touch of elegance to any space.",
     "image": "/src/assets/4.jpg",
-    "price": "24.99"
+    "price": 24.99
   },
   {
-    "title": "sunflower bundle",
-    "description": "A cheerful bundle of bright yellow sunflowers, spreading joy and warmth. Perfect for bringing sunshine to any occasion.",
+    "title": "Sunflower Bundle",
+    "description": "A cheerful bundle of 6 bright yellow sunflowers with large, bold blooms. Perfect for spreading joy and warmth, these sunflowers are ideal for bringing sunshine to any occasion.",
     "image": "/src/assets/5.jpg",
     "price": 9.99
   },
   {
-    "title": "daisy delight",
-    "description": "Charming daisies in soft pastel colors, creating a sweet and simple arrangement that exudes happiness and innocence.",
+    "title": "Daisy Delight",
+    "description": "An arrangement of 8 charming daisies in soft pastel colors, including pink, white, and yellow. This sweet and simple bouquet exudes happiness and innocence, making it perfect for any occasion.",
     "image": "/src/assets/6.jpg",
     "price": 8.99
   },
   {
-    "title": "peony perfection",
-    "description": "Lush and fragrant peonies, adding a touch of romance to any setting. Their soft petals and delicate fragrance are truly enchanting.",
+    "title": "Peony Perfection",
+    "description": "A lush arrangement of 5 fragrant peonies, available in shades of pink, coral, and white. These romantic blooms are perfect for adding a touch of elegance and charm to any setting.",
     "image": "/src/assets/7.jpg",
     "price": 17.49
   },
   {
-    "title": "mixed wildflowers",
-    "description": "A vibr19t mix of wildflowers that bring the beauty of a meadow into your home. A lively and colorful arrangement for any space.",
+    "title": "Mixed Wildflowers",
+    "description": "A vibrant mix of 15 wildflowers in various colors, bringing the beauty of a meadow into your home. This lively and colorful arrangement includes daisies, poppies, and cornflowers for a natural, free-spirited look.",
     "image": "/src/assets/8.jpg",
     "price": 11.99
   },
   {
-    "title": "garden roses",
-    "description": "Classic garden roses in a variety of soft shades. A timeless and elegant bouquet suitable for any special moment.",
+    "title": "Garden Roses",
+    "description": "A bouquet of 10 classic garden roses in soft shades of pink, peach, and cream. These timeless blooms are carefully arranged for a touch of elegance and are suitable for any special moment.",
     "image": "/src/assets/9.jpg",
     "price": 21.99
   },
   {
-    "title": "hydrangea hues",
-    "description": "Beautiful hydrangeas in soft blues and pinks. These full blooms make a statement in any room, creating a lovely, serene atmosphere.",
+    "title": "Hydrangea Hues",
+    "description": "An arrangement of 3 hydrangea stems in soft blues and pinks. These full, round blooms create a stunning display, making a bold statement in any room.",
     "image": "/src/assets/10.jpg",
     "price": 18.99
   },
   {
-    "title": "lavender love",
-    "description": "A fragrant bouquet of fresh lavender, known for its calming and relaxing properties. Perfect for gifting or enjoying at home.",
+    "title": "Lavender Love",
+    "description": "A fragrant bouquet of 12 fresh lavender stems, known for their calming and relaxing properties. Perfect for gifting or enjoying at home, this bouquet brings serenity and beauty into any space.",
     "image": "/src/assets/11.jpg",
     "price": 13.49
   },
   {
-    "title": "carnations classic",
-    "description": "A classic arrangement of carnations in rich colors. Their long-lasting blooms make them a great choice for any occasion.",
+    "title": "Carnations Classic",
+    "description": "A classic arrangement of 12 carnations in rich colors, including red, pink, and white. Their long-lasting blooms and vibrant shades make them a great choice for any occasion.",
     "image": "/src/assets/12.jpg",
     "price": 10.99
   },
   {
-    "title": "iris inspiration",
-    "description": "Striking purple irises that add a touch of elegance to any arrangement. Perfect for special occasions or a unique gift.",
+    "title": "Iris Inspiration",
+    "description": "A stunning arrangement of 7 purple irises, adding elegance and sophistication to any space. Perfect for special occasions or a unique gift for someone special.",
     "image": "/src/assets/13.jpg",
     "price": 15.99
   },
   {
-    "title": "gerbera joy",
-    "description": "Bold and colorful gerbera daisies, bringing a burst of joy and brightness to any setting. Ideal for celebrations or just because.",
+    "title": "Gerbera Joy",
+    "description": "A lively arrangement of 10 bold and colorful gerbera daisies in shades of red, orange, pink, and yellow. These cheerful blooms are perfect for brightening up any celebration.",
     "image": "/src/assets/14.jpg",
     "price": 12.99
   },
   {
-    "title": "exotic bromeliad",
-    "description": "A stunning tropical bromeliad plant, perfect for adding an exotic flair to your space. Easy to care for and visually striking.",
+    "title": "Exotic Bromeliad",
+    "description": "A stunning tropical bromeliad plant in a vibrant pink hue, perfect for adding an exotic flair to your space. Easy to care for and visually striking, this plant makes a statement.",
     "image": "/src/assets/15.jpg",
     "price": 22.99
   },
   {
-    "title": "potted lavender",
-    "description": "A potted lavender plant that brings both beauty and relaxation to your home. Ideal for adding a touch of nature to your décor.",
+    "title": "Potted Lavender",
+    "description": "A beautiful potted lavender plant with delicate purple flowers, bringing both beauty and relaxation to your home. Ideal for adding a touch of nature to your décor.",
     "image": "/src/assets/16.jpg",
     "price": 16.99
   },
   {
-    "title": "bird of paradise",
-    "description": "An exotic bird of paradise flower, with its vibrant colors and unique shape. A true statement piece for any floral arrangement.",
+    "title": "Bird of Paradise",
+    "description": "An exotic Bird of Paradise flower with its vibrant orange and blue petals, making it a true statement piece. Perfect for adding a tropical touch to any floral arrangement.",
     "image": "/src/assets/17.jpg",
     "price": 29.99
   },
   {
-    "title": "alstroemeria array",
-    "description": "A colorful arrangement of alstroemeria, also known as Peruvian lilies. Long-lasting and perfect for brightening any room.",
+    "title": "Alstroemeria Array",
+    "description": "A colorful arrangement of 10 alstroemeria stems in shades of pink, purple, and yellow. These long-lasting Peruvian lilies are perfect for brightening any room or occasion.",
     "image": "/src/assets/18.jpg",
     "price": 11.49
   },
   {
-    "title": "magnolia magic",
-    "description": "Elegant magnolia flowers that bring sophistication and charm to any space. Their large, fragrant blooms are truly captivating.",
+    "title": "Magnolia Magic",
+    "description": "An elegant arrangement of 5 large magnolia flowers with creamy white petals. Their fragrant, bold blooms bring sophistication and charm to any space.",
     "image": "/src/assets/19.jpg",
     "price": 26.99
   },
   {
-    "title": "freesia fragrance",
-    "description": "Delicate freesia flowers with a sweet fragrance. Their vibrant colors and gentle scent make them a popular choice for bouquets.",
+    "title": "Freesia Fragrance",
+    "description": "An arrangement of 8 delicate freesia flowers in vibrant shades of purple, yellow, and white. Known for their sweet fragrance, these flowers are a perfect choice for a fresh and aromatic bouquet.",
     "image": "/src/assets/20.jpg",
     "price": 14.49
   }

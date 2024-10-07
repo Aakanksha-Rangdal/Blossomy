@@ -22,7 +22,7 @@ export const cartSlice = createSlice({
     updateCartItem: (state, data) => {
       if (data.payload.action == "add") {
         const updatedItems = state.data.map((item) => {
-          if (item.title.toLowerCase() == data.payload.title) {
+          if (item.title.toLowerCase() == data.payload.title.toLowerCase()) {
             item.quantity += 1;
             return item;
           }
@@ -31,7 +31,7 @@ export const cartSlice = createSlice({
         state.data = updatedItems;
       } else {
         const updatedItems = state.data.map((item) => {
-          if (item.title.toLowerCase() == data.payload.title) {
+          if (item.title.toLowerCase() == data.payload.title.toLowerCase()) {
             item.quantity = item.quantity > 1 ? item.quantity - 1 : 1;
             return item;
           }

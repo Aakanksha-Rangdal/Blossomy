@@ -94,7 +94,7 @@ const Modal = ({ title, description, image, price, open, onClose }) => {
         }`}
       >
         <div
-          className="bg-white flex flex-col md:flex-row items-start p-6 md:p-12 w-11/12 md:w-4/5 max-w-4xl h-auto rounded-lg shadow-lg transform transition-transform duration-300 ease-in-out"
+          className="bg-[#f5e0f6] flex flex-col md:flex-row items-start p-6 md:p-12 w-11/12 md:w-4/5 max-w-4xl h-auto rounded-lg shadow-lg transform transition-transform duration-300 ease-in-out"
           onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside the modal
         >
           {/* Product Image */}
@@ -110,7 +110,7 @@ const Modal = ({ title, description, image, price, open, onClose }) => {
               {/* Product Name and Price */}
               <h2 className="text-3xl font-bold text-gray-800">{title}</h2>
               <span className="text-2xl font-semibold text-pink-600">
-                {price}
+                ${price}
               </span>
             </div>
 
